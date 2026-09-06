@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Test Conditions | WEIGH-R76</title>
+
+    <link rel="stylesheet" href="conditions.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <div>
+                <h2>WEIGH-R76</h2>
+                <span>Smart Compliance</span>
+            </div>
+        </div>
+
+        <nav class="menu">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="register.html">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>Register Instrument</span>
+            </a>
+
+            <a href="tests.html" class="active">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>New Test</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>My Tests</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-clock"></i>
+                <span>Pending Tests</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <a href="index.html" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Topbar -->
+        <header class="topbar">
+
+            <div>
+                <p class="breadcrumb">
+                    Register Instrument /
+                    <span>Test Conditions</span>
+                </p>
+
+                <h1>Test Conditions</h1>
+
+                <p class="subtitle">
+                    Record the environmental and testing conditions before starting the compliance test.
+                </p>
+            </div>
+
+            <div class="profile">
+
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <strong>Test Officer</strong>
+                    <small>Officer</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- Progress -->
+        <div class="progress-card">
+
+            <div class="step completed">
+                <div class="step-number">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+                    <strong>Instrument</strong>
+                    <small>Registration</small>
+                </div>
+            </div>
+
+            <div class="line active"></div>
+
+            <div class="step active">
+                <div class="step-number">2</div>
+
+                <div>
+                    <strong>Conditions</strong>
+                    <small>Test environment</small>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+
+                <div>
+                    <strong>Tests</strong>
+                    <small>Measurements</small>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+
+                <div>
+                    <strong>Review</strong>
+                    <small>Finalize</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Form -->
+        <form id="conditionsForm">
+
+            <!-- Test Environment -->
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+
+                    <div>
+                        <h2>Test Environment</h2>
+                        <p>Enter the environmental conditions during testing.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label for="labName">
+                            Laboratory Name <span>*</span>
+                        </label>
+
+                        <input type="text"
+                               id="labName"
+                               placeholder="Enter laboratory name"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="testLocation">
+                            Test Location <span>*</span>
+                        </label>
+
+                        <input type="text"
+                               id="testLocation"
+                               placeholder="Enter test location"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="testDate">
+                            Test Date <span>*</span>
+                        </label>
+
+                        <input type="date"
+                               id="testDate"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="temperature">
+                            Ambient Temperature (°C)
+                        </label>
+
+                        <input type="number"
+                               id="temperature"
+                               placeholder="e.g. 25"
+                               step="any">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="humidity">
+                            Relative Humidity (%)
+                        </label>
+
+                        <input type="number"
+                               id="humidity"
+                               placeholder="e.g. 50"
+                               min="0"
+                               max="100"
+                               step="any">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="pressure">
+                            Atmospheric Pressure (hPa)
+                        </label>
+
+                        <input type="number"
+                               id="pressure"
+                               placeholder="e.g. 1013"
+                               step="any">
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Testing Time -->
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon blue">
+                        <i class="fa-solid fa-clock"></i>
+                    </div>
+
+                    <div>
+                        <h2>Testing Time</h2>
+                        <p>Record the start and end time of the test.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label for="startTime">
+                            Start Time <span>*</span>
+                        </label>
+
+                        <input type="time"
+                               id="startTime"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="endTime">
+                            End Time <span>*</span>
+                        </label>
+
+                        <input type="time"
+                               id="endTime"
+                               required>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Personnel -->
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon light">
+                        <i class="fa-solid fa-user-check"></i>
+                    </div>
+
+                    <div>
+                        <h2>Personnel</h2>
+                        <p>Enter the details of the officer conducting the test.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label for="testerName">
+                            Tester Name <span>*</span>
+                        </label>
+
+                        <input type="text"
+                               id="testerName"
+                               placeholder="Enter tester name"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="testerId">
+                            Tester ID
+                        </label>
+
+                        <input type="text"
+                               id="testerId"
+                               placeholder="Enter tester ID">
+                    </div>
+
+
+                    <div class="input-group">
+                        <label for="approvalReviewer">
+                            Approval / Reviewer
+                        </label>
+
+                        <input type="text"
+                               id="approvalReviewer"
+                               placeholder="Enter reviewer name">
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Remarks -->
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+                        <i class="fa-solid fa-note-sticky"></i>
+                    </div>
+
+                    <div>
+                        <h2>Environmental Remarks</h2>
+                        <p>Add any relevant observations about the testing environment.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label for="environmentRemarks">
+                        Remarks
+                    </label>
+
+                    <textarea id="environmentRemarks"
+                              rows="4"
+                              placeholder="Enter environmental observations or remarks..."></textarea>
+
+                </div>
+
+            </section>
+
+
+            <!-- Buttons -->
+            <div class="form-actions">
+
+                <button type="button"
+                        class="btn secondary"
+                        id="backBtn">
+
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Back
+
+                </button>
+
+
+                <button type="submit"
+                        class="btn primary">
+
+                    Save & Continue
+                    <i class="fa-solid fa-arrow-right"></i>
+
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+
+    <script src="conditions.js"></script>
+
+</body>
+</html>

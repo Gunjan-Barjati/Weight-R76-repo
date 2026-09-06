@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Register Instrument | WEIGH-R76</title>
+
+    <link rel="stylesheet" href="register.css">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <div>
+                <h2>WEIGH-R76</h2>
+                <span>Smart Compliance</span>
+            </div>
+        </div>
+
+        <nav class="menu">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="register.html" class="active">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>Register Instrument</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>New Test</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>My Tests</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-clock"></i>
+                <span>Pending Tests</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <a href="index.html" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+
+    </aside>
+
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <!-- Top Bar -->
+        <header class="topbar">
+
+            <div>
+                <p class="breadcrumb">
+                    Dashboard / <span>Register Instrument</span>
+                </p>
+
+                <h1>Register Instrument</h1>
+                <p class="subtitle">
+                    Add instrument details before starting a compliance test.
+                </p>
+            </div>
+
+            <div class="profile">
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <strong>Test Officer</strong>
+                    <small>Officer</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- Progress -->
+        <div class="progress-card">
+
+            <div class="step active">
+                <div class="step-number">1</div>
+                <div>
+                    <strong>Instrument</strong>
+                    <small>Registration</small>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="step-number">2</div>
+                <div>
+                    <strong>Conditions</strong>
+                    <small>Test environment</small>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="step-number">3</div>
+                <div>
+                    <strong>Tests</strong>
+                    <small>Measurements</small>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+                <div>
+                    <strong>Review</strong>
+                    <small>Finalize</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- Form -->
+        <form id="instrumentForm">
+
+
+            <!-- Instrument Identification -->
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+                        <i class="fa-solid fa-id-card"></i>
+                    </div>
+
+                    <div>
+                        <h2>Instrument Identification</h2>
+                        <p>Enter the basic identification details of the weighing instrument.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid">
+
+                    <div class="input-group">
+                        <label>Manufacturer <span>*</span></label>
+                        <input type="text"
+                               id="manufacturer"
+                               placeholder="e.g. Mettler Toledo"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Model <span>*</span></label>
+                        <input type="text"
+                               id="model"
+                               placeholder="Enter model number"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Serial Number <span>*</span></label>
+                        <input type="text"
+                               id="serial"
+                               placeholder="Enter serial number"
+                               required>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Instrument Type</label>
+
+                        <select id="instrumentType">
+
+                            <option value="">Select instrument type</option>
+                            <option>Electronic Weighing Instrument</option>
+                            <option>Platform Scale</option>
+                            <option>Bench Scale</option>
+                            <option>Counter Scale</option>
+                            <option>Other</option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Accuracy Class <span>*</span></label>
+
+                        <select id="accuracyClass" required>
+
+                            <option value="">Select accuracy class</option>
+                            <option>Class I</option>
+                            <option>Class II</option>
+                            <option>Class III</option>
+                            <option>Class IIII</option>
+
+                        </select>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Unit <span>*</span></label>
+
+                        <select id="unit" required>
+
+                            <option value="">Select unit</option>
+                            <option>kg</option>
+                            <option>g</option>
+                            <option>mg</option>
+                            <option>t</option>
+                            <option>lb</option>
+
+                        </select>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Metrological Characteristics -->
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon blue">
+                        <i class="fa-solid fa-weight-hanging"></i>
+                    </div>
+
+                    <div>
+                        <h2>Metrological Characteristics</h2>
+                        <p>Enter the capacity and scale interval information.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="form-grid four-columns">
+
+                    <div class="input-group">
+                        <label>Maximum Capacity (Max) <span>*</span></label>
+
+                        <div class="input-with-unit">
+                            <input type="number"
+                                   id="max"
+                                   placeholder="e.g. 30"
+                                   step="any"
+                                   required>
+                            <span id="maxUnit">kg</span>
+                        </div>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Minimum Capacity (Min) <span>*</span></label>
+
+                        <div class="input-with-unit">
+                            <input type="number"
+                                   id="min"
+                                   placeholder="e.g. 0.02"
+                                   step="any"
+                                   required>
+                            <span id="minUnit">kg</span>
+                        </div>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Verification Interval (e) <span>*</span></label>
+
+                        <div class="input-with-unit">
+                            <input type="number"
+                                   id="verification"
+                                   placeholder="e.g. 0.01"
+                                   step="any"
+                                   required>
+                            <span id="eUnit">kg</span>
+                        </div>
+                    </div>
+
+
+                    <div class="input-group">
+                        <label>Actual Scale Interval (d) <span>*</span></label>
+
+                        <div class="input-with-unit">
+                            <input type="number"
+                                   id="actual"
+                                   placeholder="e.g. 0.01"
+                                   step="any"
+                                   required>
+                            <span id="dUnit">kg</span>
+                        </div>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Additional Details -->
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon light">
+                        <i class="fa-solid fa-note-sticky"></i>
+                    </div>
+
+                    <div>
+                        <h2>Additional Identification Details</h2>
+                        <p>Add any relevant identification or inspection notes.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="input-group">
+
+                    <label>Remarks</label>
+
+                    <textarea
+                        id="remarks"
+                        rows="4"
+                        placeholder="Enter additional details, markings or remarks..."></textarea>
+
+                </div>
+
+            </section>
+
+            <!-- Buttons -->
+            <div class="form-actions">
+
+                <button type="button"
+                        class="btn secondary">
+                    <i class="fa-solid fa-arrow-left"></i>
+                    Cancel
+                </button>
+
+
+                <button type="submit"
+                        class="btn primary">
+                    Save & Continue
+                    <i class="fa-solid fa-arrow-right"></i>
+                </button>
+
+            </div>
+
+        </form>
+
+    </main>
+
+    <script src="register.js"></script>
+
+</body>
+</html>

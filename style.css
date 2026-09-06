@@ -1,0 +1,689 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+    font-family: "Inter", sans-serif;
+    background: #f5f8fc;
+    color: #172033;
+}
+
+
+.page {
+    min-height: 100vh;
+    display: flex;
+}
+
+
+/* 
+   LEFT VISUAL PANEL
+ */
+
+.visual-panel {
+    width: 56%;
+    min-height: 100vh;
+
+    position: relative;
+
+    background-image:
+        linear-gradient(
+            120deg,
+            rgba(7, 35, 70, 0.96),
+            rgba(15, 75, 130, 0.78)
+        ),
+        url("scale.jpg");
+
+    background-size: cover;
+    background-position: center;
+
+    overflow: hidden;
+}
+
+
+.overlay {
+    position: absolute;
+    inset: 0;
+
+    background:
+        radial-gradient(
+            circle at 80% 20%,
+            rgba(64, 156, 255, 0.25),
+            transparent 35%
+        );
+}
+
+
+.visual-content {
+    position: relative;
+    z-index: 2;
+
+    height: 100%;
+
+    padding: 55px 65px;
+
+    display: flex;
+    flex-direction: column;
+}
+
+
+/* LOGO */
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+}
+
+
+.logo-icon,
+.mobile-logo .logo-icon {
+    width: 46px;
+    height: 46px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: rgba(255,255,255,0.15);
+
+    border: 1px solid rgba(255,255,255,0.25);
+
+    color: white;
+
+    font-size: 21px;
+    font-weight: 800;
+}
+
+
+.logo h1 {
+    color: white;
+    font-size: 20px;
+    letter-spacing: 1px;
+}
+
+
+.logo span {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #bfdbfe;
+
+    font-size: 8px;
+    font-weight: 600;
+
+    letter-spacing: 1.5px;
+}
+
+
+/* HERO */
+
+.hero-content {
+    margin-top: auto;
+    margin-bottom: 65px;
+
+    max-width: 570px;
+}
+
+
+.badge {
+    display: inline-block;
+
+    padding: 8px 13px;
+
+    border-radius: 50px;
+
+    background: rgba(255,255,255,0.11);
+
+    border: 1px solid rgba(255,255,255,0.18);
+
+    color: #dbeafe;
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 1px;
+}
+
+
+.hero-content h2 {
+    margin-top: 22px;
+
+    color: white;
+
+    font-size: clamp(42px, 5vw, 70px);
+
+    line-height: 1.03;
+
+    letter-spacing: -3px;
+}
+
+
+.hero-content h2 span {
+    color: #60a5fa;
+}
+
+
+.hero-content p {
+    margin-top: 22px;
+
+    max-width: 480px;
+
+    color: #dbeafe;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+}
+
+
+/* FEATURES */
+
+.feature-row {
+    display: flex;
+    gap: 45px;
+}
+
+
+.feature {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+
+.feature strong {
+    color: #60a5fa;
+    font-size: 12px;
+}
+
+
+.feature span {
+    color: #dbeafe;
+    font-size: 11px;
+    line-height: 1.5;
+}
+
+
+/*
+   LOGIN PANEL
+ */
+
+.login-panel {
+    width: 44%;
+
+    min-height: 100vh;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8fafc;
+}
+
+
+.login-container {
+    width: min(430px, 85%);
+
+    padding: 30px 0;
+}
+
+
+/* MOBILE LOGO */
+
+.mobile-logo {
+    display: none;
+}
+
+
+/* WELCOME */
+
+.small-title {
+    color: #2563eb;
+
+    font-size: 10px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+
+.welcome h2 {
+    margin-top: 9px;
+
+    font-size: 34px;
+
+    letter-spacing: -1px;
+}
+
+
+.welcome > p:last-child {
+    margin-top: 8px;
+
+    color: #64748b;
+
+    font-size: 14px;
+}
+
+
+/* FORM */
+
+form {
+    margin-top: 40px;
+}
+
+
+.field {
+    margin-bottom: 24px;
+}
+
+
+.field label {
+    display: block;
+
+    margin-bottom: 9px;
+
+    color: #334155;
+
+    font-size: 12px;
+
+    font-weight: 600;
+}
+
+
+.input-box {
+    height: 52px;
+
+    display: flex;
+    align-items: center;
+
+    border: 1px solid #dbe3ee;
+
+    border-radius: 12px;
+
+    background: white;
+
+    transition: 0.2s;
+
+    overflow: hidden;
+}
+
+
+.input-box:focus-within {
+    border-color: #2563eb;
+
+    box-shadow:
+        0 0 0 4px rgba(37,99,235,0.09);
+}
+
+
+.input-icon {
+    width: 48px;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    font-size: 13px;
+}
+
+
+.input-box input {
+    flex: 1;
+
+    height: 100%;
+
+    border: none;
+    outline: none;
+
+    background: transparent;
+
+    font-family: inherit;
+
+    color: #172033;
+
+    font-size: 13px;
+}
+
+
+.input-box input::placeholder {
+    color: #a8b3c2;
+}
+
+
+.show-password {
+    width: 45px;
+    height: 100%;
+
+    border: none;
+
+    background: transparent;
+
+    color: #94a3b8;
+
+    cursor: pointer;
+}
+
+
+.password-label {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.password-label label {
+    margin-bottom: 9px;
+}
+
+
+.password-label a {
+    color: #2563eb;
+
+    font-size: 11px;
+
+    text-decoration: none;
+}
+
+
+/* MESSAGE */
+
+#message {
+    min-height: 18px;
+
+    margin-bottom: 10px;
+
+    font-size: 12px;
+
+    text-align: center;
+}
+
+
+/* LOGIN BUTTON */
+
+.login-button {
+    width: 100%;
+    height: 53px;
+
+    border: none;
+    border-radius: 12px;
+
+    background: linear-gradient(
+        135deg,
+        #2563eb,
+        #1d4ed8
+    );
+
+    color: white;
+
+    font-family: inherit;
+
+    font-size: 14px;
+    font-weight: 700;
+
+    cursor: pointer;
+
+    box-shadow:
+        0 10px 25px rgba(37,99,235,0.22);
+
+    transition: 0.2s;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+}
+
+
+.login-button span {
+    font-size: 20px;
+
+    transition: 0.2s;
+}
+
+
+.login-button:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 14px 30px rgba(37,99,235,0.28);
+}
+
+
+.login-button:hover span {
+    transform: translateX(4px);
+}
+
+
+.login-button:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+
+
+/* SECURITY */
+
+.security {
+    margin-top: 35px;
+
+    padding: 14px 16px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+
+    border: 1px solid #e2e8f0;
+
+    border-radius: 12px;
+
+    background: white;
+}
+
+
+.security > span {
+    width: 32px;
+    height: 32px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 8px;
+
+    background: #eff6ff;
+}
+
+
+.security strong {
+    display: block;
+
+    color: #334155;
+
+    font-size: 11px;
+}
+
+
+.security small {
+    display: block;
+
+    margin-top: 3px;
+
+    color: #94a3b8;
+
+    font-size: 10px;
+}
+
+
+/* FOOTER */
+
+footer {
+    margin-top: 35px;
+
+    color: #94a3b8;
+
+    font-size: 9px;
+
+    text-align: center;
+
+    letter-spacing: 0.4px;
+}
+
+
+/* 
+   TABLET
+*/
+
+@media (max-width: 950px) {
+
+    .visual-panel {
+        width: 50%;
+    }
+
+    .login-panel {
+        width: 50%;
+    }
+
+    .visual-content {
+        padding: 40px;
+    }
+
+    .hero-content h2 {
+        font-size: 48px;
+    }
+
+    .feature-row {
+        gap: 20px;
+    }
+
+}
+
+
+/* 
+   MOBILE
+*/
+
+@media (max-width: 700px) {
+
+    .page {
+        display: block;
+    }
+
+
+    .visual-panel {
+        width: 100%;
+        min-height: 390px;
+        height: 390px;
+    }
+
+
+    .visual-content {
+        padding: 28px 25px;
+    }
+
+
+    .logo h1 {
+        font-size: 17px;
+    }
+
+
+    .hero-content {
+        margin-top: auto;
+        margin-bottom: 25px;
+    }
+
+
+    .hero-content h2 {
+        font-size: 40px;
+        letter-spacing: -2px;
+    }
+
+
+    .hero-content p {
+        font-size: 12px;
+        margin-top: 12px;
+    }
+
+
+    .feature-row {
+        display: none;
+    }
+
+
+    .login-panel {
+        width: 100%;
+        min-height: auto;
+
+        padding: 40px 0 50px;
+    }
+
+
+    .login-container {
+        width: 88%;
+        max-width: 450px;
+    }
+
+
+    .mobile-logo {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+
+        margin-bottom: 35px;
+
+        color: #123b66;
+    }
+
+
+    .mobile-logo .logo-icon {
+        background: #123b66;
+    }
+
+
+    .welcome h2 {
+        font-size: 30px;
+    }
+
+
+    form {
+        margin-top: 30px;
+    }
+
+}
+
+
+/*
+   SMALL MOBILE
+*/
+
+@media (max-width: 400px) {
+
+    .visual-panel {
+        min-height: 350px;
+        height: 350px;
+    }
+
+
+    .hero-content h2 {
+        font-size: 34px;
+    }
+
+
+    .login-container {
+        width: 90%;
+    }
+
+
+    .security {
+        margin-top: 25px;
+    }
+
+}

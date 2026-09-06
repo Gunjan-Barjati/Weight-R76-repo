@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WEIGH-R76 Dashboard</title>
+
+    <link rel="stylesheet" href="dashboard.css">
+</head>
+
+<body>
+
+<div class="dashboard">
+
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">⚖</div>
+            <div>
+                <h2>WEIGH-R76</h2>
+                <span>NAWI Compliance</span>
+            </div>
+        </div>
+
+        <nav>
+            <a href="#" class="active">🏠 <span>Dashboard</span></a>
+            <a href="register.html">⚖️ <span>Register Instrument</span></a>
+            <a href="#">🧪 <span>New Test</span></a>
+            <a href="#">📋 <span>My Tests</span></a>
+            <a href="#">⏳ <span>Pending Tests</span></a>
+            <a href="#">📄 <span>Reports</span></a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <a href="#">⚙️ <span>Settings</span></a>
+            <a href="#" id="logout">🚪 <span>Logout</span></a>
+        </div>
+
+    </aside>
+
+
+    <!-- MAIN CONTENT -->
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+        <header class="topbar">
+
+            <div>
+                <h1>Dashboard</h1>
+                <p>Welcome back, Test Officer</p>
+            </div>
+
+            <div class="profile">
+                <div class="avatar">TO</div>
+                <div>
+                    <strong>Test Officer</strong>
+                    <small>Test Officer</small>
+                </div>
+            </div>
+
+        </header>
+
+
+        <!-- KPI CARDS -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <div class="stat-icon blue">📊</div>
+                <div>
+                    <span>Total Tests</span>
+                    <h2>24</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon green">✓</div>
+                <div>
+                    <span>Passed</span>
+                    <h2>18</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon orange">⏳</div>
+                <div>
+                    <span>Pending Review</span>
+                    <h2>4</h2>
+                </div>
+            </div>
+
+            <div class="stat-card">
+                <div class="stat-icon red">!</div>
+                <div>
+                    <span>Failed</span>
+                    <h2>2</h2>
+                </div>
+            </div>
+
+        </section>
+
+
+        <!-- QUICK ACTIONS -->
+        <section class="quick-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Quick Actions</h2>
+                    <p>Start your next compliance activity</p>
+                </div>
+            </div>
+
+            <div class="quick-actions">
+
+                <button class="action-card" 
+                onclick="window.location.href='register.html'">
+                    <span class="action-icon">⚖️</span>
+                    <div>
+                        <strong>Register Instrument</strong>
+                        <small>Add a new weighing instrument</small>
+                    </div>
+                    <b>→</b>
+                </button>
+
+                <button class="action-card">
+                    <span class="action-icon">🧪</span>
+                    <div>
+                        <strong>Start New Test</strong>
+                        <small>Begin an R-76 compliance test</small>
+                    </div>
+                    <b>→</b>
+                </button>
+
+                <button class="action-card">
+                    <span class="action-icon">📄</span>
+                    <div>
+                        <strong>View Reports</strong>
+                        <small>Check previous test reports</small>
+                    </div>
+                    <b>→</b>
+                </button>
+
+            </div>
+
+        </section>
+
+
+        <!-- RECENT TESTS -->
+        <section class="recent-section">
+
+            <div class="section-heading">
+                <div>
+                    <h2>Recent Tests</h2>
+                    <p>Your latest testing activities</p>
+                </div>
+
+                <button class="view-btn">View All</button>
+            </div>
+
+
+            <div class="table-container">
+
+                <table>
+
+                    <thead>
+                        <tr>
+                            <th>Instrument</th>
+                            <th>Serial Number</th>
+                            <th>Test</th>
+                            <th>Date</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+
+                        <tr>
+                            <td>Digital Balance</td>
+                            <td>WB-10234</td>
+                            <td>Weighing Performance</td>
+                            <td>06 Sep 2026</td>
+                            <td><span class="status passed">Passed</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Electronic Scale</td>
+                            <td>ES-45821</td>
+                            <td>Repeatability</td>
+                            <td>05 Sep 2026</td>
+                            <td><span class="status pending">Pending</span></td>
+                        </tr>
+
+                        <tr>
+                            <td>Platform Scale</td>
+                            <td>PS-78211</td>
+                            <td>Eccentricity</td>
+                            <td>04 Sep 2026</td>
+                            <td><span class="status failed">Failed</span></td>
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+<script src="dashboard.js"></script>
+
+</body>
+</html>

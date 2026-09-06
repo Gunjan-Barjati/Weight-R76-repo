@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Tests | WEIGH-R76</title>
+
+    <link rel="stylesheet" href="tests.css">
+
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+    <aside class="sidebar">
+
+        <div class="logo">
+            <div class="logo-icon">
+                <i class="fa-solid fa-scale-balanced"></i>
+            </div>
+
+            <div>
+                <h2>WEIGH-R76</h2>
+                <span>Smart Compliance</span>
+            </div>
+        </div>
+
+        <nav class="menu">
+
+            <a href="dashboard.html">
+                <i class="fa-solid fa-house"></i>
+                <span>Dashboard</span>
+            </a>
+
+            <a href="register.html">
+                <i class="fa-solid fa-scale-balanced"></i>
+                <span>Register Instrument</span>
+            </a>
+
+            <a href="tests.html" class="active">
+                <i class="fa-solid fa-clipboard-list"></i>
+                <span>New Test</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-file-lines"></i>
+                <span>My Tests</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-clock"></i>
+                <span>Pending Tests</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-chart-column"></i>
+                <span>Reports</span>
+            </a>
+
+            <a href="#">
+                <i class="fa-solid fa-gear"></i>
+                <span>Settings</span>
+            </a>
+
+        </nav>
+
+        <a href="index.html" class="logout">
+            <i class="fa-solid fa-right-from-bracket"></i>
+            <span>Logout</span>
+        </a>
+
+    </aside>
+
+
+    <main class="main-content">
+
+        <header class="topbar">
+
+            <div>
+                <p class="breadcrumb">
+                    Register Instrument /
+                    Conditions /
+                    <span>Tests</span>
+                </p>
+
+                <h1>Tests & Measurements</h1>
+
+                <p class="subtitle">
+                    Enter test readings for the selected weighing instrument.
+                </p>
+            </div>
+
+            <div class="profile">
+
+                <div class="profile-icon">
+                    <i class="fa-solid fa-user"></i>
+                </div>
+
+                <div>
+                    <strong>Test Officer</strong>
+                    <small>Officer</small>
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <div class="progress-card">
+
+            <div class="step completed">
+                <div class="step-number">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+                    <strong>Instrument</strong>
+                    <small>Registration</small>
+                </div>
+            </div>
+
+            <div class="line active"></div>
+
+            <div class="step completed">
+                <div class="step-number">
+                    <i class="fa-solid fa-check"></i>
+                </div>
+
+                <div>
+                    <strong>Conditions</strong>
+                    <small>Test environment</small>
+                </div>
+            </div>
+
+            <div class="line active"></div>
+
+            <div class="step active">
+                <div class="step-number">3</div>
+
+                <div>
+                    <strong>Tests</strong>
+                    <small>Measurements</small>
+                </div>
+            </div>
+
+            <div class="line"></div>
+
+            <div class="step">
+                <div class="step-number">4</div>
+
+                <div>
+                    <strong>Review</strong>
+                    <small>Finalize</small>
+                </div>
+            </div>
+
+        </div>
+
+
+        <form id="testsForm">
+
+
+            <!-- Test Selection -->
+
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+                        <i class="fa-solid fa-flask"></i>
+                    </div>
+
+                    <div>
+                        <h2>Test Selection</h2>
+                        <p>Select the tests to be performed on the instrument.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="test-options">
+
+                    <label class="test-option">
+                        <input type="checkbox"
+                               id="weighingTest"
+                               checked>
+
+                        <span>
+                            <strong>Weighing Performance</strong>
+                            <small>Check indication error at different loads.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="test-option">
+                        <input type="checkbox"
+                               id="repeatabilityTest"
+                               checked>
+
+                        <span>
+                            <strong>Repeatability</strong>
+                            <small>Compare repeated indications at the same load.</small>
+                        </span>
+                    </label>
+
+
+                    <label class="test-option">
+                        <input type="checkbox"
+                               id="eccentricityTest"
+                               checked>
+
+                        <span>
+                            <strong>Eccentricity</strong>
+                            <small>Check indications at different positions.</small>
+                        </span>
+                    </label>
+
+                </div>
+
+            </section>
+
+
+            <!-- Weighing Performance -->
+
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon blue">
+                        <i class="fa-solid fa-weight-scale"></i>
+                    </div>
+
+                    <div>
+                        <h2>Weighing Performance</h2>
+                        <p>Enter reference and observed values for each load point.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table id="weighingTable">
+
+                        <thead>
+                            <tr>
+                                <th>Load Point</th>
+                                <th>Reference</th>
+                                <th>Observed</th>
+                                <th>Error</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Zero</td>
+
+                                <td>
+                                    <input type="number"
+                                           class="reference"
+                                           step="any"
+                                           value="0">
+                                </td>
+
+                                <td>
+                                    <input type="number"
+                                           class="observed"
+                                           step="any"
+                                           value="0">
+                                </td>
+
+                                <td>
+                                    <input type="text"
+                                           class="error"
+                                           readonly>
+                                </td>
+
+                                <td>
+                                    <span class="result pending">Pending</span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Low Load</td>
+
+                                <td>
+                                    <input type="number"
+                                           class="reference"
+                                           step="any"
+                                           placeholder="e.g. 5">
+                                </td>
+
+                                <td>
+                                    <input type="number"
+                                           class="observed"
+                                           step="any"
+                                           placeholder="e.g. 5.003">
+                                </td>
+
+                                <td>
+                                    <input type="text"
+                                           class="error"
+                                           readonly>
+                                </td>
+
+                                <td>
+                                    <span class="result pending">Pending</span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Mid-range</td>
+
+                                <td>
+                                    <input type="number"
+                                           class="reference"
+                                           step="any"
+                                           placeholder="e.g. 15">
+                                </td>
+
+                                <td>
+                                    <input type="number"
+                                           class="observed"
+                                           step="any"
+                                           placeholder="e.g. 15.002">
+                                </td>
+
+                                <td>
+                                    <input type="text"
+                                           class="error"
+                                           readonly>
+                                </td>
+
+                                <td>
+                                    <span class="result pending">Pending</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+                <button type="button"
+                        class="add-btn"
+                        id="addLoadBtn">
+
+                    <i class="fa-solid fa-plus"></i>
+                    Add Load Point
+
+                </button>
+
+            </section>
+
+
+            <!-- Repeatability -->
+
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon">
+                        <i class="fa-solid fa-arrows-rotate"></i>
+                    </div>
+
+                    <div>
+                        <h2>Repeatability</h2>
+                        <p>Record repeated observations at the selected test load.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="repeatability-top">
+
+                    <div class="input-group">
+
+                        <label for="testLoad">
+                            Test Load
+                        </label>
+
+                        <input type="number"
+                               id="testLoad"
+                               step="any"
+                               placeholder="e.g. 10">
+
+                    </div>
+
+                </div>
+
+
+                <div class="observations">
+
+                    <div class="input-group">
+                        <label for="obs1">Observation 1</label>
+                        <input type="number" id="obs1" class="repeatObs" step="any">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="obs2">Observation 2</label>
+                        <input type="number" id="obs2" class="repeatObs" step="any">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="obs3">Observation 3</label>
+                        <input type="number" id="obs3" class="repeatObs" step="any">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="obs4">Observation 4</label>
+                        <input type="number" id="obs4" class="repeatObs" step="any">
+                    </div>
+
+                    <div class="input-group">
+                        <label for="obs5">Observation 5</label>
+                        <input type="number" id="obs5" class="repeatObs" step="any">
+                    </div>
+
+                </div>
+
+
+                <div class="calculation-grid">
+
+                    <div>
+                        <span>Maximum</span>
+                        <strong id="maximum">—</strong>
+                    </div>
+
+                    <div>
+                        <span>Minimum</span>
+                        <strong id="minimum">—</strong>
+                    </div>
+
+                    <div>
+                        <span>Difference</span>
+                        <strong id="difference">—</strong>
+                    </div>
+
+                    <div>
+                        <span>Repeatability Error</span>
+                        <strong id="repeatabilityError">—</strong>
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Eccentricity -->
+
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon light">
+                        <i class="fa-solid fa-table-cells"></i>
+                    </div>
+
+                    <div>
+                        <h2>Eccentricity / Corner Test</h2>
+                        <p>Enter readings for different positions on the load receptor.</p>
+                    </div>
+
+                </div>
+
+
+                <div class="table-container">
+
+                    <table id="eccentricityTable">
+
+                        <thead>
+                            <tr>
+                                <th>Position</th>
+                                <th>Reference</th>
+                                <th>Observed</th>
+                                <th>Error</th>
+                                <th>Result</th>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+
+                            <tr>
+                                <td>Center</td>
+
+                                <td>
+                                    <input type="number"
+                                           class="eccReference"
+                                           step="any">
+                                </td>
+
+                                <td>
+                                    <input type="number"
+                                           class="eccObserved"
+                                           step="any">
+                                </td>
+
+                                <td>
+                                    <input type="text"
+                                           class="eccError"
+                                           readonly>
+                                </td>
+
+                                <td>
+                                    <span class="result pending">Pending</span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Front Left</td>
+
+                                <td>
+                                    <input type="number"
+                                           class="eccReference"
+                                           step="any">
+                                </td>
+
+                                <td>
+                                    <input type="number"
+                                           class="eccObserved"
+                                           step="any">
+                                </td>
+
+                                <td>
+                                    <input type="text"
+                                           class="eccError"
+                                           readonly>
+                                </td>
+
+                                <td>
+                                    <span class="result pending">Pending</span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Front Right</td>
+
+                                <td>
+                                    <input type="number"
+                                           class="eccReference"
+                                           step="any">
+                                </td>
+
+                                <td>
+                                    <input type="number"
+                                           class="eccObserved"
+                                           step="any">
+                                </td>
+
+                                <td>
+                                    <input type="text"
+                                           class="eccError"
+                                           readonly>
+                                </td>
+
+                                <td>
+                                    <span class="result pending">Pending</span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Rear Left</td>
+
+                                <td>
+                                    <input type="number"
+                                           class="eccReference"
+                                           step="any">
+                                </td>
+
+                                <td>
+                                    <input type="number"
+                                           class="eccObserved"
+                                           step="any">
+                                </td>
+
+                                <td>
+                                    <input type="text"
+                                           class="eccError"
+                                           readonly>
+                                </td>
+
+                                <td>
+                                    <span class="result pending">Pending</span>
+                                </td>
+                            </tr>
+
+
+                            <tr>
+                                <td>Rear Right</td>
+
+                                <td>
+                                    <input type="number"
+                                           class="eccReference"
+                                           step="any">
+                                </td>
+
+                                <td>
+                                    <input type="number"
+                                           class="eccObserved"
+                                           step="any">
+                                </td>
+
+                                <td>
+                                    <input type="text"
+                                           class="eccError"
+                                           readonly>
+                                </td>
+
+                                <td>
+                                    <span class="result pending">Pending</span>
+                                </td>
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+            </section>
+
+
+            <!-- Optional Tests -->
+
+            <section class="form-card">
+
+                <div class="section-heading">
+
+                    <div class="section-icon blue">
+                        <i class="fa-solid fa-list-check"></i>
+
+</div>
+
+<div>
+    <h2>Optional Tests</h2>
+    <p>Select additional tests if required.</p>
+</div>
+
+</div>
+
+<div class="optional-tests">
+
+<label>
+
+<input type="checkbox"
+
+id="discriminationTest">
+
+<span>Discrimination</span>
+
+</label>
+
+id="tareTest">
+
+label>
+
+<input type="checkbox"
+
+<span>Tare</span>
+
+</label>
+
+<label>
+
+<input type="checkbox"
+
+id="zeroTest">
+
+<span>Zero Setting / Tracking</span>
+
+</label>
+
+<label>
+
+<input type="checkbox"
+
+id="temperatureTest">
+
+<span>Temperature Effect</span>
+
+</label>
+
+</div>
+</section>
+
+<!-- Buttons -->
+
+<div class="form-actions">
+
+<button type="button" class="btn secondary" id="backBtn">
+
+<i class="fa-solid fa-arrow-left"></i>Back</button>
+
+<button type="submit" class="btn primary"> Save & Continue <i class="fa-solid
+
+fa-arrow-right"></i>
+
+</button>
+
+</div>
+
+</form>
+
+</main>
+
+<script src="tests.js"></script>
+
+</body>
+
+</html>
